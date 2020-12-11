@@ -104,7 +104,7 @@ Host *
 
 ## Offline remote machine
 
-If you are restricted by a firewall or your company locks down your VMs and they cannot connect to the Internet, the Remote - SSH extension won't be able to connect to your VM because VS Code needs to download a component called the VS Code Server to the remote machine.
+If you are <span class='definition'>restricted by a firewall or your company locks down your VMs and they cannot connect to the Internet</span>, the Remote - SSH extension won't be able to connect to your VM because VS Code needs to download a component called the VS Code Server to the remote machine.
 
 However, you can now solve this issue by a new user [setting](/docs/getstarted/settings.md) in the Remote - SSH extension. If you enable the setting `remote.SSH.allowLocalServerDownload`, the extension will install the VS Code Server on the client first and then copy it over to the server via SCP.
 
