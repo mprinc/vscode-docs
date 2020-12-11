@@ -69,7 +69,7 @@ You can export a Jupyter Notebook as a Python file (.py), a PDF, or an HTML file
 
  ![Convert Jupyter Notebook to Python file](images/jupyter/native-toolbar-convert.png)
 
-> **Note:** For PDF export, you must have TeX installed. If you don't, you will be prompted to install it when you select the PDF option. Also, be aware that if you have SVG-only output in your Notebook, they will not be displayed in the PDF. To have SVG graphics in a PDF, either ensure that your output includes a non-SVG image format or else you can first export to HTML and then save as PDF using your browser.
+> **Note:** For PDF export, you must have TeX installed. If you don't, you will be notified that you need to install it when you select the PDF option. Also, be aware that if you have SVG-only output in your Notebook, they will not be displayed in the PDF. To have SVG graphics in a PDF, either ensure that your output includes a non-SVG image format or else you can first export to HTML and then save as PDF using your browser.
 
 ## Work with code cells in the Notebook Editor
 
@@ -106,7 +106,7 @@ When a cell is in command mode, the vertical bar to the left of the cell will be
 
 ![Code cell in edit mode](images/jupyter/native-code-cells-10.png)
 
-To move from edit mode to command mode, press the `kbstyle(ESC)` key. To move from command mode to edit mode, press the `kbstyle(Enter)` key. You can also use the mouse to change the mode by clicking into or out of the code/Markdown region in the code cell.
+To move from edit mode to command mode, press the `kbstyle(ESC)` key. To move from command mode to edit mode, press the `kbstyle(Enter)` key. You can also use the mouse to **change the mode** by clicking the vertical bar to the left of the cell or out of the code/Markdown region in the code cell.
 
 ### Add additional code cells
 
@@ -136,6 +136,18 @@ Running multiple code cells can be accomplished in a number of ways. You can use
 
 ![Run multiple code cells](images/jupyter/native-code-cells-04.png)
 
+### Run code by line
+
+To help diagnose issues with your Notebook code, run-by-line lets you step through the code of a cell in a line-by-line fashion. While stepping through code you can view the state of variables at each step via the variable explorer or hover your mouse over variables to see data tips.
+
+To start a session, just click the run-by-line icon to the right of the run cell icon on the cell's toolbar.
+
+![Start run code cell by line](images/jupyter/native-code-cells-11a.png)
+
+![Run code cell by line](images/jupyter/native-code-cells-11.png)
+
+Once in a run-by-line session, you can run the currently highlighted line of code by pressing the icon again. To exit, just click the stop button next to the run-by-line icon in the cell.
+
 ### Move a code cell
 
 Moving code cells up or down within a Notebook can be accomplished using the vertical arrows beside each code cell. Hover over the code cell and then click the up arrow to move the cell up and the down arrow to move the cell down.
@@ -147,6 +159,10 @@ Moving code cells up or down within a Notebook can be accomplished using the ver
 Deleting a code cell can be accomplished by hovering over a code cell and using the delete icon in the code cell toolbar or through the keyboard combo `kbstyle(dd)` when the selected code cell is in command mode.
 
 ![Delete a code cell](images/jupyter/native-code-cells-06.png)
+
+### Undo your last change
+
+You can use the `kbstyle(z)` key to undo your previous change, for example, if you've made an accidental edit you can undo it to the previous correct state, or if you've deleted a cell accidentally you can recover it.
 
 ### Switch between code and Markdown
 
@@ -240,3 +256,5 @@ To connect to a remote Jupyter server:
 3. When prompted to **Enter the URI of a Jupyter server**, provide the server's URI (hostname) with the authentication token included with a `?token=` URL parameter. (If you start the server in the VS Code terminal with an authentication token enabled, the URL with the token typically appears in the terminal output from where you can copy it.) Alternatively, you can specify a username and password after providing the URI.
 
     ![Prompt to supply a Jupyter server URI](images/jupyter/enter-url-auth-token.png)
+
+> **Note:** For added security, Microsoft recommends configuring your Jupyter server with security precautions such as SSL and token support. This helps ensure that requests sent to the Jupyter server are authenticated and connections to the remoter server are encrypted. For guidance about securing a notebook server, see the [Jupyter docs](https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#securing-a-notebook-server).

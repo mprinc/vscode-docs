@@ -1,7 +1,7 @@
 ---
 # DO NOT TOUCH — Managed by doc writer
 ContentId: 7EA90618-43A3-4873-A9B5-61CC131CE4EE
-DateApproved: 7/9/2020
+DateApproved: 10/8/2020
 
 # Summarize the whole topic in less than 300 characters for SEO purpose
 MetaDescription: Learn how to publish Visual Studio Code extensions to the public Marketplace and share them with other developers.
@@ -114,6 +114,12 @@ You can also enter your Personal Access Token as you publish with an optional pa
 vsce publish -p <token>
 ```
 
+## Review extension installs and ratings
+
+You can see how your extension is doing on the Marketplace by going to the **Manage Publishers & Extensions** page at `https://marketplace.visualstudio.com/manage/publishers/{publisher ID}`, providing your publisher ID in the URL. Here you'll see all extensions published under your publisher ID and can select an extension to see the Acquisition Trend over time, as well as Total Acquisition counts and Ratings & Reviews.
+
+![Marketplace extension report](images/publishing-extension/extension-report.png)
+
 ## Auto-incrementing the extension version
 
 You can auto-increment an extension's version number when you publish by specifying the [SemVer](https://semver.org/) compatible number to increment: `major`, `minor`, or `patch`.
@@ -192,8 +198,8 @@ You can customize how your extension looks in the Visual Studio Marketplace. See
 Here are some tips for making your extension look great on the Marketplace:
 
 - A `README.md` file at the root of your extension will be used to populate the extension's Marketplace page's contents. `vsce` will modify README links for you in two different ways:
-  - If you add a `repository` field to your `package.json` and if it is a public GitHub repository, `vsce` will automatically detect it and adjust the links accordingly.
-  - You can override that behavior and/or set it by using the `--baseContentUrl` and `--baseImagesUrl` flags when running `vsce package`. Then publish the extension by passing the path to the packaged `.vsix` file as an argument to `vsce publish`.
+  - If you add a `repository` field to your `package.json` and it is a public GitHub repository, `vsce` will automatically detect it and adjust relative links accordingly, using the `master` branch by default. You can override the GitHub branch with the `--githubBranch` flag when running `vsce package` or `vsce publish`.
+  - For more fine-grained control, you can set the `--baseContentUrl` and `--baseImagesUrl` flags to set the base URLs for relative links.
 - A `LICENSE` file at the root of your extension will be used as the contents for the extension's license.
 - A `CHANGELOG.md` file at the root of your extension will be used as the contents for the extension's change log.
 - You can set the banner background color by setting `galleryBanner.color` to the intended hex value in `package.json`.
